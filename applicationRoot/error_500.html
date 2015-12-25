@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>笨鸟海淘- 最注重海淘用户体验的转运公司</title>
+    <meta name="keywords" content="笨鸟海淘，笨鸟转运，转运公司,美国快递、美国转运"/>
+    <meta name="description" content="首家转运免首重，免税州直飞，24小时出库，丢货全赔，6*10小时贴心客服。笨鸟海淘用互联网思维打造转运公司，颠覆转运行业时效慢，体验差，安全性低，价格高的用户体验。"/>
+    <link href="./index_files/index.css" rel="stylesheet" type="text/css"/>
+<link rel="shortcut icon" type="image/x-icon" href="http://www.birdex.cn/icon_16x16.png" media="screen"/>
+<link href="./index_files/common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="./index_files/jquery-1.8.3.all.js"></script>
+<script type="text/javascript" src="./index_files/layer.min.js"></script>
+<script type="text/javascript" src="./index_files/common.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var userName = $.cookie('BEYOND_NickName');
+        if (userName == undefined || userName == "") {
+            userName = $.cookie('BEYOND_UserName');
+        }
+        if (userName == undefined || userName == "") {
+            userName = "会员用户";
+        } else {
+            if (userName.length > 8 && userName.indexOf("@") > -1) {
+                userName = userName.substring(0, 7) + "...";
+            }
+        }
+        $("#headerUserName").html(userName).attr("title", userName);
+
+        var url = document.location.href;
+        if (url == "http://www.birdex.cn/")
+            url = "http://www.birdex.cn/index.html";
+        else if (url == "http://birdex.cn/")
+            url = "http://www.birdex.cn/index.html";
+
+        $("ul.nav>li").each(function () {
+            if (url.indexOf($(this).attr("val")) > -1) {
+                $(this).addClass("current");
+            }
+        });
+
+        var userID = $.cookie('User::TUserID');
+        if (userID != undefined && userID != null && parseInt(userID) > 0) {
+            $("#logout").show();
+            $(".nav").css("right", "0");
+        } else {
+            $(".nav").css("right", "0");
+            $("#login").show();
+        }
+
+        $(".ggnew").click(function () {
+            if ($("#ggtab").is(':visible')) {
+                $("#ggtab").slideUp("slow");
+            } else {
+                $("#ggtab").slideDown("slow");
+            };
+            var img = $(this).find("span").css("background-image");
+            if (img.indexOf('header01') > -1) {
+                $(this).find("span").css("background-image", img.replace('header01.png', 'header_up.png'));
+            } else {
+                $(this).find("span").css("background-image", img.replace('header_up.png', 'header01.png'));
+            }
+        });
+
+        $("#tags1 li").mouseover(function (index, item) {
+            $("#tags1 li").removeClass("selectTag");
+            $(this).addClass("selectTag");
+            $("#tags1").parent().find("div").each(function () {
+                if ($(this).hasClass("selectTag")) {
+                    $(this).removeClass("selectTag").addClass("tagContent");
+                }
+            });
+            $("#" + $(this).attr("obj")).removeClass("tagContent").addClass("selectTag");
+        });
+
+        if (url.indexOf('index') > -1 || document.URL == 'http://www.birdex.cn/' || document.location.href.indexOf('index') > -1) {
+            $(".ggnew").click();
+        }
+
+        var headerName = $.cookie('User::TrueName');
+        if (headerName == undefined || headerName == null || headerName == "") {
+            headerName = $.cookie('User::NickName');
+            if (headerName == undefined || headerName == null || headerName == "") {
+                headerName = $.cookie('BEYOND_UserName');
+                if (headerName == undefined || headerName == null) {
+                    headerName = "";
+                }
+            }
+        }
+
+        $("#headername").html(headerName);
+    });
+</script>
+<meta property="qc:admins" content="15411542256212450636" />
+<style type="text/css">
+    #header{ border-bottom:1px solid #dcdcdc; overflow:hidden; height:32px; line-height:32px;}
+    #header a{ font-size:14px; color:#6a6a6b;}
+    #header .pull-right a{ margin:0 10px;}
+    #header .ggnew{ cursor:pointer;}
+    #header .ggnew i{ color:#eb7424; font-style:normal;}
+    #header .ggnew span{ float:left; display:block; width:42px; height:32px; background:url('http://img.birdex.cn/images/header01.png') no-repeat center center #0593d3; overflow:hidden; margin-right:5px;}
+    #ggtab{ display:none; background-color:#0593d3; padding:10px 0; overflow:hidden;}
+    #ggtab .hbt{ font-size:22px; font-weight:bold; color:#f57121; padding-left:32px; background:url('http://img.birdex.cn/images/header02.png') no-repeat left center; overflow:hidden; line-height:32px;}
+    #sevedu{ padding-top:5px; overflow:hidden;}
+    #sevedu .tagContent{display:none;}
+    #sevedu .tagContent p,
+    #sevedu .selectTag p{ font-size:16px; color:#edf6ff;}
+    #sevedu .tagContent p a,
+    #sevedu .selectTag p a{ color:#f57121; text-decoration:underline; margin-left:8px; font-weight:bold;}
+    #sevedu .tag{ width:100%; padding-top:5px; text-align:right; overflow:hidden;}
+    #sevedu .tag li{display:inline;}
+    #sevedu .tag a{display:inline-block; width:8px; height:9px; background:url('http://img.birdex.cn/images/header03.png') no-repeat; overflow:hidden; margin:0 3px;}
+    #sevedu .tag a:hover,
+    #sevedu .tag .selectTag a{ width:56px; background-image:url('http://img.birdex.cn/images/header04.png');}
+</style>
+<style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></head>
+<body>
+<div id="ggtab" style="display: block;">
+     <div class="mian">
+          <div class="hbt">公告</div>
+          
+          <div id="sevedu">
+                <div class="selectTag" id="li0"><p>于2015年6月12日美国周五（北京时间2015年6月13日，周六），美国仓库将迎来搬迁新地址的安排<a href="http://www.birdex.cn/Information-29.html" target="_blank">查看详情</a></p></div><div class="tagContent" id="li1"><p>香港仓库更址通知<a href="http://www.birdex.cn/Information-32.html" target="_blank">查看详情</a></p></div><div class="tagContent" id="li2"><p>关于澳洲仓库接到商家举报客户欺骗性购买的警示公告<a href="http://www.birdex.cn/Information-36.html" target="_blank">查看详情</a></p></div><div class="tagContent" id="li3"><p>立夏时节，天气也逐渐炎热起来，可能部分易融化、变形、变质的商品<a href="http://www.birdex.cn/Information-24.html" target="_blank">查看详情</a></p></div><div class="tagContent" id="li4"><p>关于新增渠道详细介绍公告<a href="http://www.birdex.cn/Information-21.html" target="_blank">查看详情</a></p></div><ul id="tags1" class="tag"><li obj="li0" class="selectTag"><a href="javascript:void(0)"></a></li><li obj="li1"><a href="javascript:void(0)"></a></li><li obj="li2"><a href="javascript:void(0)"></a></li><li obj="li3"><a href="javascript:void(0)"></a></li><li obj="li4"><a href="javascript:void(0)"></a></li></ul>
+          </div>
+     </div>
+</div>
+<div id="header" class="noticeHeader">
+     <div class="mian">
+         <div class="pull-right" id="login" style="display:none;">
+              <a href="/login.do">登录</a>|<a href="/login.do">注册</a>
+         </div>
+         <div class="pull-right" id="logout" style="">
+               <span id="headername">yang kun</span><a href="http://passport.birdex.cn/LogOut.aspx" style="">退出</a>
+          </div>
+         <a class="ggnew"><span style="background-image: url(http://img.birdex.cn/images/header_up.png);"></span>网站最新公告 <i>5</i> 条</a>
+     </div>
+</div>
+<div id="head" style="border-bottom-style: none;">
+     <div class="mian">
+          <a href="./index_files/index.html" class="logo"><img src="./index_files/logo.png" alt="笨鸟海淘" title="笨鸟海淘"><span>笨鸟</span></a>
+          
+          
+          <ul class="nav" style="right: 0px;">
+              <li val="help" style="padding-right:5px;"><a href="/help.html">帮助中心</a></li>
+              <li val="Information" id="headInformation"><a href="/prohibition.html">禁运物品</a></li>
+              <li val="account" id="headAccount"><a href="/user/packages.do">我的帐户</a></li>
+              <li val="index" class="current"><a href="/index.html">首页</a></li>
+          </ul>
+     </div>
+</div>
+
+
+<div id="500error">
+	<section id="page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="divide-100"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 not-found text-center">
+				   <div class="error">
+					  500
+				   </div>
+				</div>
+				<div class="col-md-4 col-md-offset-4 not-found text-center">
+				   <div class="content">
+					  <h3>错误： 服务器内部错误</h3>
+					  <p>
+						 对不起，服务器内部出错啦！<br />
+						 请返回<a href="index.html">首页</a>。
+					  </p>
+				   </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>	
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".levelicon").mouseenter(function () {
+            var elem = $(this)[0];
+            var left = pageX(elem);
+            var top = pageY(elem);
+            var content = $(this).attr("content");
+            var showHTML = "<div style='margin:0;padding:0;line-height:18px;'>" + content + "</div>";
+            $("#tip").html(showHTML).css("position", "absolute").css("left", left - 41).css("top", top + 14).show();
+        }).mouseleave(function (e) {
+            var ex = e.pageX;
+            var ey = e.pageY;
+            var sx = $(this).offset().top;
+            var sxx = $(this).offset().top+100;
+            var sy = $(this).offset().left;
+            var syy = $(this).offset().left+8;
+            if (ey > sx && ey <= sxx && ex > sy && ex <= syy) {
+                $("#tip").mouseleave(function () { $("#tip").hide(); });
+                return false;
+            }
+            $("#tip").html("").hide();
+        });
+    });
+
+    function pageX(elem) {
+        return elem.offsetParent ? (elem.offsetLeft + pageX(elem.offsetParent)) : elem.offsetLeft;
+    }
+
+    function pageY(elem) {
+        return elem.offsetParent ? (elem.offsetTop + pageY(elem.offsetParent)) : elem.offsetTop;
+    }
+</script>
+<div id="foot">
+     <div class="mian">
+          <span class="pull-right"><img src="./index_files/logo.gif" alt="笨鸟海淘"></span>
+          
+          <div class="pull-left">
+              <h5>联系我们</h5>
+              <p>400-8890-788</p>
+          </div>
+          <div class="pull-left">
+              <h5>邮件</h5>
+              <p><a href="mailto:service@birdex.cn" style="color:#FFFFFF">service@birdex.cn</a></p>
+          </div>
+          <div class="pull-left" style="width:200px">
+            <h5>友情链接</h5>
+            <a href="http://www.etao.com/tuan/index.html?partnerid=4852" target="_blank" style="color:#FFFFFF">一淘海淘团</a><br/>
+            <a href="http://www.letsebuy.com/" target="_blank" style="color:#FFFFFF">海外e购</a><br/>
+            <a href="http://www.extrabux.com/" target="_blank" style="color:#FFFFFF">海淘网站</a>
+            
+          </div>
+     </div>
+    <div class="mian" style="margin:0 auto;text-align:center;color:#818181;font-size:14px;vertical-align:bottom;">
+        <div>粤ICP备14015306号-1</div> 
+     </div>
+</div>
+<div style="display:none;">
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F68c503fc431b1f102540a9c79f1ffc78' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./index_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=68c503fc431b1f102540a9c79f1ffc78" target="_blank"><img border="0" src="./index_files/21.gif" width="20" height="20"></a>
+</div>
+
+<ul id="wq_toolbar" class="lowIE"><li><a href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4008890788&aty=0&a=0&curl=&ty=1" target="_balnk" class="bird-qq"></a></li><li><a href="http://www.birdex.cn/index.html#" class="bird-tel"></a><span class="tab-text">400-8890-788</span></li><li class="wechatbox"><a href="http://www.birdex.cn/index.html#" class="bird-weixin"></a><div class="weixin"></div></li><li><a href="javascript:;" class="bird-top" onclick="window.scrollTo(0,0);"></a></li></ul></body></html>

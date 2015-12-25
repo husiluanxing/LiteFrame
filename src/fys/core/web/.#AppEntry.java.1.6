@@ -1,0 +1,68 @@
+package www;
+
+
+import java.io.IOException;
+import java.sql.Connection;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import simpleWebFrame.database.DBConnectionPool;
+import simpleWebFrame.web.AbstractEntry;
+import simpleWebFrame.web.FrameKeys;
+
+public class AppEntry extends AbstractEntry {
+	
+	public boolean checkPriority(String moduleName, String actionName,
+			HttpServletRequest request) {
+		if (moduleName.equals("adAdmin")) {
+			if (request.getSession().getAttribute(AppKeys.SITE_USER) == null) {
+				return false;
+			}
+		}
+//		if (moduleName.equals("adPlatformAdmin")) {
+//			if (request.getSession().getAttribute(AppKeys.PLATFORM_USER) == null) {
+//				return false;
+//			}
+//		}
+		return true;
+	}
+
+	public String getPriorityErorrPage() {
+		return "nopriority.jsp";
+	}
+
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (request.getParameter("module") != null
+				&& request.getParameter("action") != null) {
+			doPost(request, response);
+		} else {
+			getServletContext().getRequestDispatcher("/index.html")
+					.forward(request, response);
+		}
+	}
+
+	@Override
+	public void entryInit() {
+		
+		Connection con = null;
+		try {
+			con = DBConnectionPool.getInstance().getConnection();
+			LocalDataCache.getInstance().loadData();
+			DataCache.getInstance().loadData(con);
+			
+			String uploadDir = LocalDataCache.getInstance().getSysConfig("uploadFileDir");
+			AppKeys.setUploadFilePath(uploadDir);
+		} catch (Exception e) {
+		} finally {
+			if (con != null) {
+				try {
+					con.close();
+				} catch (Exception e) {}
+			}
+		}
+	}
+}

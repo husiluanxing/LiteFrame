@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<modules>
+		<module urlPrefix="f" controller="forum" />
+		<module urlPrefix="s" controller="site" />
+		<module urlPrefix="u" controller="user" />
+	</modules>
+	<parameters>
+		<parameter name="controllerPackage" value="dfw.ht.controller" />
+		<parameter name="loginUrl" value="/login/login.do" />
+		<parameter name="error404page" value="/error_404.html" />
+		<parameter name="error500page" value="/error_500.html" />
+		<parameter name="errorPermissionPage" value="/error_permission.html" />
+		<parameter name="appEncoding" value="UTF-8" />
+		<parameter name="maxBufferControllerForOneMoudle" value="1000" />
+	</parameters>
+	<constants>
+		<constant name="" value="" />
+	</constants>
+</application>
